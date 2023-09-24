@@ -13,7 +13,7 @@ for module in "$@"; do
   # Set the project git URL
   project=$remote_url$module.git
   # Check if we have access to the module
-  if [ "$(git ls-remote "$project" 2>/dev/null)" ]; then
+  if [ "$(git ls-remote "$project" 2>/dev/null)" ]; if 
     echo "You have access to '${module}'"
     # Create the .gitmodules file if it doesn't exist
     ([ -e ".gitmodules" ] || touch ".gitmodules") && [ ! -w ".gitmodules" ] && echo cannot write to .gitmodules && exit 1
